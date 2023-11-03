@@ -100,8 +100,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                                       .data!.articles![index].urlToImage
                                       .toString(),
                                   fit: BoxFit.cover,
-                                  height: height * 0.25,
-                                  width : width * 0.20,
+                                  height: height * 0.20,
+                                  width : width * 0.15,
                                   placeholder: (context, url) => Container(
                                     child: Center(
                                       child: SpinKitCircle(
@@ -134,17 +134,21 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(snapshot.data!.articles![index].source!.name.toString(),
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 12,
-                                              color: Colors.black54,
-                                              fontWeight: FontWeight.w600
+                                          Flexible(
+                                            child: Text(snapshot.data!.articles![index].source!.name.toString(),
+                                              style: GoogleFonts.poppins(
+                                                fontSize: 12, 
+                                                color: Colors.black54,
+                                                fontWeight: FontWeight.w600
+                                              ),
                                             ),
                                           ),
-                                          Text(format.format(dateTime),
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w500
+                                          Flexible(
+                                            child: Text(format.format(dateTime),
+                                              style: GoogleFonts.poppins(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w500
+                                              ),
                                             ),
                                           ),
                                         ],
